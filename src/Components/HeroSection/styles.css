@@ -1,0 +1,40 @@
+.hero-section {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("photographe2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:10%;
+    font-size: 50px;
+    color:#fff;
+    font-weight: bold;
+    text-decoration: center;
+}
+.hero-text{
+    text-align:center;
+}
+
+.hero-btn{
+    color: #030303;
+    border-color: #030303;
+    background: whitesmoke;
+    padding:1.5rem;
+    margin-top:1.5rem;
+    font-size:20px
+}
+
+.hero-btn:hover{
+    background: #030303;
+    color: whitesmoke;
+    transition: all 0.2s 0s ease-in-out;
+
+}

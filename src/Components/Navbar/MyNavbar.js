@@ -29,7 +29,7 @@ export default function MyNavbar() {
 
     </Nav>
     <Nav>
-      <Link className={'router-link'} to="/">Accueil</Link>
+      <Link className={'router-link'}  to="/">Accueil</Link>
       <Link className={'router-link'} to="/presentation">Présentation</Link>
       <Link className={'router-link'} to="/portfolio">Portfolio</Link>
 
