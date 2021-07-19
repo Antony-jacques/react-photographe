@@ -1,7 +1,7 @@
 .container-slider {
   max-width: 700px;
   height: 500px;
-  margin: 100px auto 0;
+  margin: 2rem auto 0;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -46,12 +46,12 @@
   pointer-events: none;
 }
 .prev {
-  top: 50%;
+  top: 60%;
   left: 20px;
   transform: translateY(-60%);
 }
 .next {
-  top: 50%;
+  top: 60%;
   right: 20px;
   transform: translateY(-60%);
 }

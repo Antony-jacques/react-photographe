@@ -80,18 +80,22 @@ export default function Slider() {
       });
   }
   return (
-    <div className="container-slider">
+    <div style={{marginTop:'5rem', backgroundColor:'whitesmoke', padding:'2rem 0'}}>
+          <div className="container-slider">
       {dataSlider.map((obj, index) => {
         {
           /* index correspond à l'index des élément parcouru avec map et commence à 0 */
         }
         return (
+          
           <div
             key={obj.id}
             className={
               slideAnim.index === index + 1 ? "slide active-anim" : "slide"
             }
           >
+                        <h2 style={{textAlign:'center',margin:'3rem 0' }}>Mes derniers clichés</h2>
+
             <img
               src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`}
               alt=""
@@ -117,6 +121,8 @@ export default function Slider() {
             );
           })}
       </div>
+    </div>
+
     </div>
   );
 }
