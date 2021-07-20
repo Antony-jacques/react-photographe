@@ -8,6 +8,8 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+import './styles.css'
+
 export default function Clients() {
   console.log(dataClients);
   return (
@@ -17,13 +19,15 @@ export default function Clients() {
           A qui s'adressent mes prestations ?
         </h2>
         <Container style={{ display: "flex", justifyContent: "center" }}>
-        <Row>
+        <Row style={{position:'relative'}}>
           {dataClients.map((val, index) => {
               console.log(val.img)
             return (
               <Card
                 key={index}
-                style={{ width: "18rem", margin: "1rem", textAlign: "center", padding: '0' }}
+                className={'card-client'}
+                // style={{ width: "18rem", margin: "1rem", textAlign: "center", padding: '0',   boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)'
+            // }}
               >
                 {/* <Card.Img variant="top" src={process.env.PUBLIC_URL + `/Imgs/${val.img}.jpg`} /> */}
 

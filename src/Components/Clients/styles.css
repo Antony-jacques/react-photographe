@@ -1,0 +1,26 @@
+.card-client {
+  width: 18rem;
+  margin: 3rem 1rem;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px) /* décale vers le bas sur l'axe des y*/
+}
+
+
+  @keyframes slide{ /*création de l'animation*/
+      100%{
+        transform:none; /* supr le décalage*/
+      }
+  }
+
+  .card-client:hover { /* attribution de l'animation*/
+    animation: slide 0.4s  ease-out forwards;
+  } 
+
+  .card-client:hover .card-body{
+    background-color:rgba(13,28,38,1);
+    color:white;
+  } 
+
+
