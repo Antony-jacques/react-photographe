@@ -1,4 +1,3 @@
-import corporate from './corporate.jpg'
 
 const dataClients = [
   {

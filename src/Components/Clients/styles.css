@@ -23,4 +23,27 @@
     color:white;
   } 
 
+  .card-testimonial {
+    width: 18rem;
+    margin: 3rem 1rem;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px) /* décale vers le bas sur l'axe des y*/
+  }
+  .testimonial-img{
+    /* box-sizing: border-box; */
+    width: 60%;
+    border-radius: 50%;
+    border: 5px solid;
+  }
 
+  .testimonial-background{
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2rem;
+  }
+
+.testimonial-text span{
+    font-size: 1.5rem;
+}
