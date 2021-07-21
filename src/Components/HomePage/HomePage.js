@@ -4,6 +4,7 @@ import Slider from '../Slider/Slider.js'
 import HeroSection from '../HeroSection/HeroSection.js'
 import Presentation from '../Presentation/Presentation.js'
 import Clients from '../Clients/Clients.js'
+import Footer from '../Footer/Footer.js'
 
 export default function HomePage() {
     return (
@@ -12,6 +13,7 @@ export default function HomePage() {
             <Presentation/>
             <Slider/>
             <Clients/>
+            <Footer/>
         </div>
     )
 }
