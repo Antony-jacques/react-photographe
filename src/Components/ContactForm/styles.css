@@ -1,4 +1,17 @@
-div{
+.contact-section{
     background-color: #fff;
-    margin:auto
+}
+
+.section-content{
+    padding:2rem 
+}
+
+.section-content ul{
+    list-style-type: none;
+    padding-left: 0px;
+    line-height: 3rem;
+}
+
+.right-col{
+    padding-left: 3rem;
 }
