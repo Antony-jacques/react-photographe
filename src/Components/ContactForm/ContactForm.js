@@ -84,7 +84,7 @@ export default function ContactForm() {
                         style={{ height: "100px", marginBottom:'1rem' }}
                       />
                         <Button variant="warning" type="submit" style={{  marginBottom:'1rem' }}>
-    Submit
+    Envoyer
   </Button>
                     </Form>
                   </Col>

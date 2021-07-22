@@ -52,8 +52,8 @@ export default function Clients() {
       </div>
       <div>
         {" "}
-        <h2 style={{ textAlign: "center" }}>Ils m'ont fait confiance</h2>
-        <Container>
+        <h2 className='client-title' style={{ textAlign: "center" }}>Ils m'ont fait confiance</h2>
+        <Container style={{ display: "flex", justifyContent: "center" }}>
           <Row>
             {dataTestimonials.map((val,index)=>{
               console.log(index+1)

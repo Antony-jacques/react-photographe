@@ -6,10 +6,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import portrait from "./portrait2.jpg";
 
+
 export default function Presentation() {
   return (
     <div>
-      <Container>
+      <Container style={{marginBottom: '2rem'}}>
         <h2
           style={{
             textAlign: "center",
@@ -21,7 +22,7 @@ export default function Presentation() {
         </h2>
         <Row>
           <Col xs={12} md={4}>
-            <img src={portrait} alt="portrait" style={{ width: "100%" }} />
+            <img src={portrait} alt="portrait" style={{ width: "100%" , marginBottom: '2rem'}} />
           </Col>
           <Col xs={12} md={8} style={{display: 'flex', margin: 'auto'}}>
             <div style={{    lineHeight: '2.5rem',

@@ -1,5 +1,7 @@
 import React from 'react'
 import './styles.css'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 export default function HeroSection() {
     return (
@@ -9,7 +11,10 @@ export default function HeroSection() {
                 Photographe Professionnel à Lyon 
                 </h2>
                 <h3>particuliers et professionnels</h3>
+                {/* <button className='hero-btn'>Réservez votre séance !</button> */}
+                <Link  to="/reservation">
                 <button className='hero-btn'>Réservez votre séance !</button>
+              </Link>
 
             </div>
             

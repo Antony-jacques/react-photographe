@@ -80,7 +80,7 @@ export default function Slider() {
       });
   }
   return (
-    <div style={{marginTop:'5rem', backgroundColor:'whitesmoke', padding:'2rem 0'}}>
+    <div className='slider-component' >
           <div className="container-slider">
       {dataSlider.map((obj, index) => {
         {
