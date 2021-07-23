@@ -3,7 +3,7 @@ import React from 'react'
 const dataforfaits=[
     {
       titre: 'Entreprise',
-      prix: 1000,  
+      prix: 'A partir de 1000',  
       prestation: [{
           sousPrestation:'Shooting journée', 
           prix: 1900,
@@ -22,7 +22,7 @@ const dataforfaits=[
 
     {
         titre: 'Portrait',
-        prix: 90,  
+        prix: 'A partir de 90',  
         prestation: [{
             sousPrestation:'Séance 15 minutes', 
             prix: 90,

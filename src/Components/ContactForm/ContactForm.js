@@ -20,8 +20,8 @@ export default function ContactForm() {
           <Col md={9}>
             <div className="contact-section">
               <Container>
-                <Row className='section-content'>
-                  <Col md={4} >
+                <Row className="section-content">
+                  <Col md={4}>
                     <h2>Contact</h2>
                     <ul>
                       <li>
@@ -41,7 +41,7 @@ export default function ContactForm() {
                       style={{ width: "100%" }}
                     />
                   </Col>
-                  <Col md={8} className="right-col" >
+                  <Col md={8} className="right-col">
                     <div>
                       <p style={{ marginBottom: 0 }}>
                         Parlez-moi de votre projet, de votre besoin, de vos
@@ -81,11 +81,15 @@ export default function ContactForm() {
                       <Form.Control
                         as="textarea"
                         placeholder="Votre message"
-                        style={{ height: "100px", marginBottom:'1rem' }}
+                        style={{ height: "100px", marginBottom: "1rem" }}
                       />
-                        <Button variant="warning" type="submit" style={{  marginBottom:'1rem' }}>
-    Envoyer
-  </Button>
+                      <Button
+                        variant="warning"
+                        type="submit"
+                        style={{ marginBottom: "1rem" }}
+                      >
+                        Envoyer
+                      </Button>
                     </Form>
                   </Col>
                 </Row>
