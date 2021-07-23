@@ -27,9 +27,13 @@
     text-align: center;
 }
 
-#forfaits{
+.section{
     text-align:center;
-    padding-top:2rem
+    padding:1rem 0
+}
+
+.section h3{
+    padding:1rem 0
 }
 
 .close ::before{

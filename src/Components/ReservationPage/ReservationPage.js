@@ -8,6 +8,7 @@ import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
 
 import dataforfaits from "./dataforfaits";
 
@@ -22,16 +23,18 @@ registerLocale("fr", fr);
 export default function ReservationPage() {
   console.log("dataforfaits", dataforfaits);
 
-  const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
 
   const [dateReservation, setDateReservation] = useState();
   const [objectReservation, setObjectReservation] = useState("Entreprise");
 
   const [startDate, setStartDate] = useState(new Date());
-  console.log("startDate", startDate.toLocaleDateString());
+  const [hasReserved, setHasReserved] = useState(false);
 
-  // alert(date.toLocaleDateString("fr-FR", options));
+  const handleReservation = () => {
+    setLgShow(false);
+    setHasReserved(true);
+  };
 
   return (
     <div>
@@ -40,10 +43,18 @@ export default function ReservationPage() {
           <h2>TARIFS PRESTATIONS PHOTO</h2>
         </div>
       </div>
-      <section id="forfaits">
+      {hasReserved && (
+        <section className="section" id="reservation">
+          <h3>Votre demande de réservation en cours</h3>
+          <Container>
+            <Row className="justify-content-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis perferendis cum labore. Modi nihil suscipit distinctio? Facilis voluptatibus qui unde?</Row>
+          </Container>
+        </section>
+      )}
+
+      <section className="section">
         <h3>Des forfaits adaptés à vos besoins</h3>
         <Container>
-          <Row className="justify-content-md-center"></Row>
           <Row className="justify-content-md-center">
             {dataforfaits.map((val, index) => {
               return (
@@ -123,17 +134,17 @@ export default function ReservationPage() {
                                   //   {val.titre}
                                   // </option>
                                   <>
-                                  {val.prestation.map((val,index)=>{
-                                    return(
-                                      <option
-                                    key={index}
-                                     // value={val.titre}
-                                   >
-                                     {val.categorie} - {' '}  
-                                     {val.sousPrestation} - {val.prix}€
-                                   </option>
-                                    )
-                                  })}
+                                    {val.prestation.map((val, index) => {
+                                      return (
+                                        <option
+                                          key={index}
+                                          // value={val.titre}
+                                        >
+                                          {val.categorie} - {val.sousPrestation}{" "}
+                                          - {val.prix}€
+                                        </option>
+                                      );
+                                    })}
                                   </>
                                 );
                               })}
@@ -174,16 +185,19 @@ export default function ReservationPage() {
                               </Col>
                             </Form.Group> */}
 
-                            <p>
-                              Vous avez choisi {objectReservation} le{" "}
+                            <Alert
+                              variant="primary"
+                              style={{ marginTop: "2rem" }}
+                            >
+                              Vous avez choisi: {objectReservation} le{" "}
                               {startDate.toLocaleDateString()}
-                            </p>
+                            </Alert>
                           </Form.Group>
 
                           <Button
                             variant="warning"
-                            type="submit"
                             style={{ margin: "1rem 0" }}
+                            onClick={handleReservation}
                           >
                             Envoyer
                           </Button>
