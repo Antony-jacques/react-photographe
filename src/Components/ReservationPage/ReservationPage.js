@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./ReservationPage.css";
 
+import ReservationList from '../ReservationList/ReservationList.js'
+
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,10 +21,9 @@ import { registerLocale, setDefaultLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
 registerLocale("fr", fr);
 
-// import the datepickercomponent
 
 export default function ReservationPage() {
-  console.log("dataforfaits", dataforfaits);
+  // console.log("dataforfaits", dataforfaits);
 
   const [lgShow, setLgShow] = useState(false);
 
@@ -31,10 +33,24 @@ export default function ReservationPage() {
   const [startDate, setStartDate] = useState(new Date());
   const [hasReserved, setHasReserved] = useState(false);
 
+  // const data = ["test"]
+  const [data, setData] = useState([])
+
   const handleReservation = () => {
     setLgShow(false);
+ 
+    // data.push({dateReservation:startDate.toLocaleDateString(), objectReservation:objectReservation});
+    const newResa = {dateReservation:startDate.toLocaleDateString(), objectReservation:objectReservation}
+    setData(data =>[...data, newResa]) // récupère le tableau précédent et ajoute la nouvelle résa
+    console.log('newResa',newResa)
+    console.log('data46',data)
+
     setHasReserved(true);
+
+    //console.log('startDate.toLocaleDateString()',startDate.toLocaleDateString())
   };
+
+
 
   return (
     <div>
@@ -47,7 +63,9 @@ export default function ReservationPage() {
         <section className="section" id="reservation">
           <h3>Votre demande de réservation en cours</h3>
           <Container>
-            <Row className="justify-content-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis perferendis cum labore. Modi nihil suscipit distinctio? Facilis voluptatibus qui unde?</Row>
+            <Row className="justify-content-md-center">
+              <ReservationList data={data}></ReservationList>
+            </Row>
           </Container>
         </section>
       )}
@@ -150,7 +168,7 @@ export default function ReservationPage() {
                               })}
                             </Form.Control>
 
-                            {console.log("val", val)}
+                            {/* {console.log("val", val)} */}
                             {/* {val.prestation.map((vals,index)=>{
                               return(
                                 <div  key={index} >
