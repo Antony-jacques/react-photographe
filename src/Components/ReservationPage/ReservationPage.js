@@ -26,7 +26,7 @@ export default function ReservationPage() {
   const [lgShow, setLgShow] = useState(false);
 
   const [dateReservation, setDateReservation] = useState();
-  const [objectReservation, setObjectReservation] = useState('Entreprise');
+  const [objectReservation, setObjectReservation] = useState("Entreprise");
 
   const [startDate, setStartDate] = useState(new Date());
   console.log("startDate", startDate.toLocaleDateString());
@@ -43,9 +43,7 @@ export default function ReservationPage() {
       <section id="forfaits">
         <h3>Des forfaits adaptés à vos besoins</h3>
         <Container>
-          <Row className="justify-content-md-center">
-
-          </Row>
+          <Row className="justify-content-md-center"></Row>
           <Row className="justify-content-md-center">
             {dataforfaits.map((val, index) => {
               return (
@@ -97,14 +95,13 @@ export default function ReservationPage() {
                               }}
                             /> */}
                             <div>
-                            <DatePicker
-                              selected={startDate}
-                              onChange={(date) => setStartDate(date)}
-                              locale="fr"
-                              dateFormat="dd/MMM/yyyy"
-                              minDate={new Date()}
-                            />
-
+                              <DatePicker
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
+                                locale="fr"
+                                dateFormat="dd/MMM/yyyy"
+                                minDate={new Date()}
+                              />
                             </div>
                           </Form.Group>
 
@@ -113,25 +110,74 @@ export default function ReservationPage() {
 
                             <Form.Control
                               as="select"
-                              onChange={(e) => setObjectReservation(e.target.value)}
+                              onChange={(e) =>
+                                setObjectReservation(e.target.value)
+                              }
                             >
                               {dataforfaits.map((val, index) => {
                                 return (
-                                  <option key={index} 
-                                  // value={val.titre}
-                                  >
-                                    {val.titre}
-                                    
-                                  </option>
+                                  // <option
+                                  //   key={index}
+                                  //   // value={val.titre}
+                                  // >
+                                  //   {val.titre}
+                                  // </option>
+                                  <>
+                                  {val.prestation.map((val,index)=>{
+                                    return(
+                                      <option
+                                    key={index}
+                                     // value={val.titre}
+                                   >
+                                     {val.categorie} - {' '}  
+                                     {val.sousPrestation} - {val.prix}€
+                                   </option>
+                                    )
+                                  })}
+                                  </>
                                 );
                               })}
                             </Form.Control>
-                            
+
+                            {console.log("val", val)}
+                            {/* {val.prestation.map((vals,index)=>{
+                              return(
+                                <div  key={index} >
+                                  {vals.sousPrestation}
+                                </div>
+                              )
+                            })} */}
+
+                            {/* <Form.Group as={Row} className="mb-3">
+                              <Form.Label as="legend" column sm={2}>
+                                Radios
+                              </Form.Label>
+                              <Col sm={10}>
+                                <Form.Check
+                                  type="radio"
+                                  label="first radio"
+                                  name="formHorizontalRadios"
+                                  id="formHorizontalRadios1"
+                                />
+                                <Form.Check
+                                  type="radio"
+                                  label="second radio"
+                                  name="formHorizontalRadios"
+                                  id="formHorizontalRadios2"
+                                />
+                                <Form.Check
+                                  type="radio"
+                                  label="third radio"
+                                  name="formHorizontalRadios"
+                                  id="formHorizontalRadios3"
+                                />
+                              </Col>
+                            </Form.Group> */}
+
                             <p>
                               Vous avez choisi {objectReservation} le{" "}
                               {startDate.toLocaleDateString()}
                             </p>
-
                           </Form.Group>
 
                           <Button
