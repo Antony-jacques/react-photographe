@@ -1,3 +1,0 @@
-[submodule "path_to_submodule"] 
-  path = react-photo
-  url = git://https://github.com/Antony-jacques/react-photo
