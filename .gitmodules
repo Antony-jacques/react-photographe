@@ -1,3 +1,7 @@
 [submodule "react-photo"] 
   path = react-photo 
   url = https://github.com/Antony-jacques/react-photo
+
+  [submodule "react-photographe"] 
+  path = react-photographe 
+  url = https://github.com/Antony-jacques/react-photographe
