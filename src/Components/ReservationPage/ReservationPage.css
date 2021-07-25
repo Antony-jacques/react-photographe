@@ -57,3 +57,50 @@
     height: 20px;
     background-color: rgb(247, 12, 12, 0.5);
 }
+
+.section.reservationPage{
+    background-color: whitesmoke;
+
+}
+
+.section.reservationPage .card{
+    padding:0 0 1rem;
+    margin:1rem
+}
+
+.section.reservationPage .card-body{
+    padding:0
+}
+
+.section.reservationPage .card-title{
+    color:white;
+    padding:1rem;
+    /* background-color:#ffe063; */
+    background-color:rgb(33, 37, 41);
+    margin-bottom:1rem
+}
+
+.price{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.125)
+
+}
+
+.sous-prestation-general{
+    padding: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+
+}
+
+.btn-box{
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50px);
+    /* margin-top: 5rem; */
+}
+
+.space{
+    height:4rem
+}

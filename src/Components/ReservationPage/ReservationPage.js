@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./ReservationPage.css";
 
-import ReservationList from '../ReservationList/ReservationList.js'
-
-
+import ReservationList from "../ReservationList/ReservationList.js";
+import Footer from '../Footer/Footer.js'
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -21,36 +20,32 @@ import { registerLocale, setDefaultLocale } from "react-datepicker";
 import fr from "date-fns/locale/fr";
 registerLocale("fr", fr);
 
-
 export default function ReservationPage() {
   // console.log("dataforfaits", dataforfaits);
 
   const [lgShow, setLgShow] = useState(false);
 
   const [dateReservation, setDateReservation] = useState();
-  const [objectReservation, setObjectReservation] = useState("Entreprise");
+  const [objectReservation, setObjectReservation] = useState("Entreprise - Shooting journée - 1900€");
 
   const [startDate, setStartDate] = useState(new Date());
   const [hasReserved, setHasReserved] = useState(false);
 
-  // const data = ["test"]
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   const handleReservation = () => {
     setLgShow(false);
- 
-    // data.push({dateReservation:startDate.toLocaleDateString(), objectReservation:objectReservation});
-    const newResa = {dateReservation:startDate.toLocaleDateString(), objectReservation:objectReservation}
-    setData(data =>[...data, newResa]) // récupère le tableau précédent et ajoute la nouvelle résa
-    console.log('newResa',newResa)
-    console.log('data46',data)
+
+    const newResa = {
+      dateReservation: startDate.toLocaleDateString(),
+      objectReservation: objectReservation,
+    };
+    setData((data) => [...data, newResa]); // récupère le tableau précédent et ajoute la nouvelle résa
+    console.log("newResa", newResa);
+    console.log("data46", data);
 
     setHasReserved(true);
-
-    //console.log('startDate.toLocaleDateString()',startDate.toLocaleDateString())
   };
-
-
 
   return (
     <div>
@@ -70,7 +65,7 @@ export default function ReservationPage() {
         </section>
       )}
 
-      <section className="section">
+      <section className="section reservationPage">
         <h3>Des forfaits adaptés à vos besoins</h3>
         <Container>
           <Row className="justify-content-md-center">
@@ -95,7 +90,13 @@ export default function ReservationPage() {
                         );
                       })}
                     </Card.Text>
-                    <Button onClick={() => setLgShow(true)}>Je réserve</Button>
+                    <div className="space"></div>
+                     <div className="btn-box" style={{display:'flex'}}>
+                     <Button variant="warning" onClick={() => setLgShow(true)} style={{margin:'auto'}}>
+                      Je réserve
+                    </Button>
+                     </div>
+
 
                     <Modal
                       size="lg"
@@ -230,6 +231,7 @@ export default function ReservationPage() {
           </Row>
         </Container>
       </section>
+<Footer/>
     </div>
   );
 }
