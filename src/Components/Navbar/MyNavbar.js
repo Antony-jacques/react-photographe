@@ -24,17 +24,8 @@ export default function MyNavbar() {
               <Link className={"router-link"} to="/">
                 Accueil
               </Link>
-
-              <Link className={"router-link"} to="/presentation">
-                Présentation
-              </Link>
-
               <Link className={"router-link"} to="/reservation">
                 Réservation
-              </Link>
-
-              <Link className={"router-link"} to="/portfolio">
-                Portfolio
               </Link>
             </Nav>
           </Navbar.Collapse>

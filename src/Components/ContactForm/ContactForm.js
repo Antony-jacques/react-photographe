@@ -59,7 +59,7 @@ export default function ContactForm() {
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formGroupEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="email" placeholder="Email" />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formGroupPhone">
                         <Form.Label>Téléphone</Form.Label>

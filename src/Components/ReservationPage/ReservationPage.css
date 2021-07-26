@@ -60,8 +60,9 @@
 
 .section.reservationPage{
     background-color: whitesmoke;
-
 }
+
+
 
 .section.reservationPage .card{
     padding:0 0 1rem;
@@ -103,4 +104,19 @@
 
 .space{
     height:4rem
+}
+
+@media screen and (max-width: 700px){
+    .reservationPage.section h3{
+padding: 1rem;
+    }
+    .reservationPage .row .card{
+        /* display:block */
+        /* margin: 1rem auto !important;
+        display: block !important */
+
+        margin: 1rem auto ;
+        display: block ;
+
+    }
 }

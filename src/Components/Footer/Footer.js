@@ -1,9 +1,10 @@
 import React from 'react'
 import ContactForm from '../ContactForm/ContactForm.js'
+import './Footer.css'
 
 export default function Footer() {
     return (
-        <div style={{backgroundColor: '#212529',     padding: '200px 0'}}>
+        <div id="footer" >
             <ContactForm/>
         </div>
     )
