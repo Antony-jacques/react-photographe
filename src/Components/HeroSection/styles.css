@@ -38,3 +38,9 @@
     transition: all 0.2s 0s ease-in-out;
 
 }
+
+@media screen and (max-width: 700px){
+  .hero-text{
+    left:0
+  }
+}
