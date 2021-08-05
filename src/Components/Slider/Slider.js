@@ -72,57 +72,60 @@ export default function Slider() {
     }
   };
 
-
-  const moveDot = index =>{
+  const moveDot = (index) => {
     setSlideAnim({
-        index: index,
-        inProgress: false,
-      });
-  }
+      index: index,
+      inProgress: false,
+    });
+  };
   return (
-    <div className='slider-component' >
-          <div className="container-slider">
-      {dataSlider.map((obj, index) => {
-        {
-          /* index correspond à l'index des élément parcouru avec map et commence à 0 */
-        }
-        return (
-          
-          <div
-            key={obj.id}
-            className={
-              slideAnim.index === index + 1 ? "slide active-anim" : "slide"
-            }
-          >
-                        <h2 style={{textAlign:'center',margin:'3rem 0' }}>Mes derniers clichés</h2>
+    <div id='realisations' className="slider-component">
+      <div className="container-slider">
+        {dataSlider.map((obj, index) => {
+          {
+            /* index correspond à l'index des élément parcouru avec map et commence à 0 */
+          }
+          return (
+            <div
+              key={obj.id}
+              className={
+                slideAnim.index === index + 1 ? "slide active-anim" : "slide"
+              }
+            >
+              <h2 style={{ textAlign: "center", margin: "3rem 0" }}>
+                Mes derniers clichés
+              </h2>
 
-            <img
-              src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`}
-              alt=""
-            />
-            {/*
+              <img
+                src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`}
+                alt=""
+              />
+              {/*
                          '/' permet de faire ref à la racine (=public) en mode devt
                         Pour que le chemin soit ok en prode également, il faut ajouter process.env.PUBLIC_URL (=URL du site final)
                         */}
-          </div>
-        );
-      })}
-      <BtnSlider moveSlide={nextSlide} direction={"next"} />
-      <BtnSlider moveSlide={prevSlide} direction={"prev"} />
+            </div>
+          );
+        })}
+        <BtnSlider moveSlide={nextSlide} direction={"next"} />
+        <BtnSlider moveSlide={prevSlide} direction={"prev"} />
 
-      <div className="container-dots">
-        {Array.from({ length: 5 }) //crée un tab de 5 obj undefined
-          .map((item, index) => {
-            return (
-              <button
-                className={slideAnim.index === index + 1 ? "dot active" : "dot"}
-                onClick={()=> moveDot(index+1)} /* Ds un evt, qd on veut utiliser une f avec des arg, il faut l'encapsuler dans une f anonyme sinon elle se déclenche dès que le compo est appelé */
-              ></button>
-            );
-          })}
+        <div className="container-dots">
+          {Array.from({ length: 5 }) //crée un tab de 5 obj undefined
+            .map((item, index) => {
+              return (
+                <button
+                  className={
+                    slideAnim.index === index + 1 ? "dot active" : "dot"
+                  }
+                  onClick={() =>
+                    moveDot(index + 1)
+                  } /* Ds un evt, qd on veut utiliser une f avec des arg, il faut l'encapsuler dans une f anonyme sinon elle se déclenche dès que le compo est appelé */
+                ></button>
+              );
+            })}
+        </div>
       </div>
-    </div>
-
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function MyNavbar() {
     <Router>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">A.Dupont Photographe</Navbar.Brand>
+          <Navbar.Brand href="#home">A.D. Photographe</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
@@ -27,6 +27,10 @@ export default function MyNavbar() {
               <Link className={"router-link"} to="/reservation">
                 Réservation
               </Link>
+              <a className="router-link" href="#a-propos">A propos</a>
+              <a className="router-link" href="#realisations">Réalisations</a>
+              <a className="router-link" href="#footer">Contact</a>
+
             </Nav>
           </Navbar.Collapse>
         </Container>

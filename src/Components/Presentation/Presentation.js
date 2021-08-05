@@ -10,7 +10,7 @@ import portrait from "./portrait2.jpg";
 export default function Presentation() {
   return (
     <div>
-      <Container style={{marginBottom: '2rem'}}>
+      <Container id='a-propos' style={{marginBottom: '2rem'}}>
         <h2
           style={{
             textAlign: "center",
